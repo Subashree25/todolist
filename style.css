@@ -1,0 +1,164 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Montserrat', sans-serif;
+}
+
+body {
+   background: url('https://images.squarespace-cdn.com/content/v1/520e56dde4b0c6a537372805/1584024421017-LRKM2JRKU6LM8XK6Z7O1/IMG_4308.jpeg') no-repeat center center fixed;
+   background-size: cover;
+   color: #000;
+}
+
+section {
+   margin: 2rem;
+}
+
+h3 {
+   color: #000;
+   font-size: 1rem;
+   font-weight: 400;
+   margin-bottom: 0.5rem;
+}
+
+h4 {
+   color: #1d1d1e;
+   font-size: 0.875rem;
+   font-weight: 700;
+   margin-bottom: 0.5rem;
+}
+
+.greeting .title {
+   display: flex;
+}
+
+.greeting .title input {
+   margin-left: 0.5rem;
+   flex: 1;
+   color: #000;
+   font-size: 1.5rem;
+   font-weight: 700;
+}
+
+.create-todo input[type="text"], 
+.create-todo input[type="submit"] {
+   display: block;
+   width: 100%;
+   padding: 1rem 1.5rem;
+   font-size: 1.125rem;
+   border-radius: 0.5rem;
+   margin-bottom: 1.5rem;
+}
+
+.create-todo input[type="submit"] {
+   background-color: #252525;
+   color: #FFF;
+   cursor: pointer;
+   transition: 0.2s ease-in-out;
+}
+
+.create-todo input[type="submit"]:hover {
+   opacity: 0.85;
+}
+
+.create-todo .options {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 1rem;
+}
+
+.create-todo .options label {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 1.5rem;
+   background-color: #FFF;
+   border-radius: 0.5rem;
+   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+}
+
+input[type="radio"], input[type="checkbox"] {
+   display: none;
+}
+
+.bubble {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   border: 2px solid blue;
+   box-shadow: 0 0 4px blue;
+}
+
+.bubble.personal {
+   border-color: red;
+   box-shadow: 0 0 4px red;
+}
+
+.bubble::after {
+   content: "";
+   display: block;
+   width: 0;
+   height: 0;
+   border-radius: 50%;
+   background-color: blue;
+   transition: 0.2s ease-in-out;
+}
+
+.bubble.personal::after {
+   background-color: red;
+}
+
+input:checked ~ .bubble::after {
+   width: 10px;
+   height: 10px;
+}
+
+.todo-list .todo-item {
+   display: flex;
+   align-items: center;
+   padding: 1rem;
+   background-color: #FFF;
+   border-radius: 0.5rem;
+   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+   margin-bottom: 1rem;
+}
+
+.todo-item label {
+   margin-right: 1rem;
+}
+
+.todo-item .todo-content input {
+   text-decoration: none;
+   color: #000;
+   font-size: 1.125rem;
+}
+
+.todo-item .actions button {
+   padding: 0.5rem;
+   margin-right: 0.5rem;
+   border-radius: 0.25rem;
+   color: #FFF;
+   cursor: pointer;
+}
+
+.todo-item .actions .edit {
+   background-color: #272629;
+}
+
+.todo-item .actions .delete {
+   background-color: #e2462b;
+}
+
+.todo-item.done .todo-content input {
+   text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+   .todo-item {
+       flex-direction: column;
+       align-items: flex-start;
+   }
+}
